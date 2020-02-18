@@ -12,7 +12,10 @@ project "Lava-Core"
 	location "Lava-Core"
 	kind "StaticLib"
 	language "C++"
-	targetdir "bin/%{cfg.buildcfg}"
+	targetdir ("bin/%{cfg.buildcfg}/%{prj.name}/")
+	objdir ("bin-int/%{cfg.buildcfg}/%{prj.name}/")
+	targetname "Lava"
+	staticruntime "on"
 	
 	files
 	{
@@ -26,6 +29,9 @@ project "Lava-Test"
 	location "Lava-Test"
 	kind "ConsoleApp"
 	language "C++"
+	targetdir ("bin/%{cfg.buildcfg}/%{prj.name}/")
+	objdir ("bin-int/%{cfg.buildcfg}/%{prj.name}/")
+	staticruntime "on"
 	
 	files
 	{
